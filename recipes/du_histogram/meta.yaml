@@ -1,0 +1,36 @@
+{% set name = "du_histogram" %}
+{% set version = "alpha.01" %}
+{% set sha256 = "9543f2ec006deb14e98ae074a9f2ab72cfd21cfdbf65ec357e1469a7e57e9e14" %}
+{% set summary = "Simple ASCII histogram of du (disk usage) output" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ version }}.tar.gz
+  url: https://github.com/jmeppley/{{ name }}/archive/{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+about:
+  home: https://github.com/jmeppley/{{ name }}
+  summary: {{ summary }}
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - python
+    - numpy
+
+  run:
+    - python
+    - numpy
+    - docopt
+
+test:
+  commands:
+      - duhist.py -h
+      - duhist.py
+      - duhist.py -l -t .
