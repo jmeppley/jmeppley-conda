@@ -1,0 +1,31 @@
+{% set name = "batch_launcher" %}
+{% set version = "alpha.02" %}
+{% set sha256 = "f1f11ade7e32929c54b60af10e09ab3126ba5c4138df90e8df16efaa6e61b84b" %}
+{% set summary = "Python script to fragment tasks for parallel execution " %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ version }}.tar.gz
+  url: https://github.com/jmeppley/{{ name }}/archive/{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+about:
+  home: https://github.com/jmeppley/{{ name }}
+  summary: {{ summary }}
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - python
+
+  run:
+    - python
+
+test:
+  commands:
+      - batch_launcher.py -h
