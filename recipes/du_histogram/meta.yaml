@@ -8,7 +8,7 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ version }}.tar.gz
+  fn: {{ name }}.{{ version }}.tar.gz
   url: https://github.com/jmeppley/{{ name }}/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
@@ -17,7 +17,7 @@ about:
   summary: {{ summary }}
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
