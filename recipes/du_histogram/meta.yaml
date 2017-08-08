@@ -1,6 +1,6 @@
 {% set name = "du_histogram" %}
-{% set version = "alpha.01" %}
-{% set sha256 = "9543f2ec006deb14e98ae074a9f2ab72cfd21cfdbf65ec357e1469a7e57e9e14" %}
+{% set version = "alpha.02" %}
+{% set sha256 = "e04478643a3485934ecb0d3ce07f7b0cfe6552573a40d36e7b78254f7cae9537" %}
 {% set summary = "Simple ASCII histogram of du (disk usage) output" %}
 
 package:
