@@ -30,9 +30,15 @@ requirements:
   build:
     - python
     - setuptools
-
+    - futures >=3.0 # [ py2k ]
+    - requests >=1.1
+    - six >=1.5.2
+    - pbr
   run:
     - python
+    - futures >=3.0 # [ py2k ]
+    - requests >=1.1
+    - six >=1.5.2
 
 # test:
   # Python imports
