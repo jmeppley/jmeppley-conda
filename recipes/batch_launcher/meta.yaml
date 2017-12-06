@@ -1,6 +1,6 @@
 {% set name = "batch_launcher" %}
-{% set version = "alpha.02" %}
-{% set sha256 = "f1f11ade7e32929c54b60af10e09ab3126ba5c4138df90e8df16efaa6e61b84b" %}
+{% set version = "alpha.03" %}
+{% set sha256 = "ebb26e98caf11359529e11e5f0622fd5ab55f1aac008c115843c26dbc29c5685" %}
 {% set summary = "Python script to fragment tasks for parallel execution " %}
 
 package:
