@@ -37,4 +37,4 @@ test:
   commands:
       - screen_list.py -h
       - assign_top_hit.py -h
-      - $CONDA_PREFIX/share/py-metagenomics/databases/buildAccKOMapping.py
+      - $CONDA_PREFIX/share/py-metagenomics/databases/buildRefSeqAccToTaxidMap.py -h
