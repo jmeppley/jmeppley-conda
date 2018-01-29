@@ -1,5 +1,5 @@
 {% set name = "py-metagenomics" %}
-{% set version = "beta.02" %}
+{% set version = "beta.03" %}
 {% set sha256 = "21faadd6ac3ea4189351e8406d321da4336ebd6c42e47b61ec976220b04c8e04" %}
 {% set summary = "Some python libs and scripts for metagenomic analyses" %}
 
