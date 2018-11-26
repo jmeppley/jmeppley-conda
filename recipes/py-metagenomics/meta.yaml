@@ -17,7 +17,9 @@ about:
   summary: {{ summary }}
 
 build:
-  number: 0
+  number: 1
+  noarch: python
+  skip: True # [py26]
 
 requirements:
   build:
