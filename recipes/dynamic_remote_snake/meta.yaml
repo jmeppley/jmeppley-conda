@@ -1,0 +1,33 @@
+{% set name = "dynamic_remote_snake" %}
+{% set version = "0.0.5" %}
+{% set sha256 = "405e1ad7c513a85f90b774d0250268089a96a57708bc6d3c3eeda865d434bc16" %}
+{% set summary = "Snakemake extension to dynamically make files remote" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}.{{ version }}.tar.gz
+  url: https://github.com/jmeppley/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+about:
+  home: https://github.com/jmeppley/{{ name }}
+  summary: {{ summary }}
+
+build:
+  number: 0
+  noarch: python
+  skip: True # [py26]
+
+requirements:
+  build:
+    - python
+    - snakemake-minimal
+    - pysftp
+  run:
+    - python
+    - snakemake-minimal
+    - pysftp
+
