@@ -1,0 +1,33 @@
+{% set name = "bbcp" %}
+{% set version = "14.04.14.00.1" %}
+{% set shasum = "1578ff7ebbe00b99e4519ea346a64894fcffc04e03478a74b90a22a5bfd2eb41" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  sha256: {{ shasum }}
+  url: https://github.com/jmeppley/{{ name }}/archive/{{ version }}.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - openssl
+  host:
+    - openssl
+  run:
+    - openssl
+
+test:
+  commands:
+    - "bbcp -h"
+
+about:
+  home: 'https://github.com/eeertekin/bbcp'
+  license: "GNU General Public License v3.0"
+  summary: "Secure, Fast (multithreaded) network copy uility. Originally from SLAC: http://www.slac.stanford.edu/~abh/bbcp/bbcp.git/"
