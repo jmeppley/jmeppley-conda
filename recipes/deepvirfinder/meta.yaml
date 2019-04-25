@@ -1,0 +1,33 @@
+{% set name = "DeepVirFinder" %}
+{% set version = "alpha_001" %}
+{% set shasum = "5dbf7da34097f12fd6547bbad7858bbba8f99d0f39d1a6d437929d77b53917ad" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  sha256: {{ shasum }}
+  url: https://github.com/jmeppley/{{ name }}/archive/{{ version }}.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  run:
+    - numpy
+    - theano
+    - keras
+    - scikit-learn
+    - mkl-service
+    - Biopython
+
+test:
+  commands:
+    - "dvf.py -h"
+    - "dvf.py -i ${CONDA_PREFIX}/share/{{ name }}/test/crAssphage.fa -o test -l 300"
+
+about:
+  home: 'https://github.com/jessieren/DeepVirFinder'
+  license: "USC-RL v1.0"
+  summary: "DeepVirFinder predicts viral sequences using deep learning method. The method has good prediction accuracy for short viral sequences, so it can be used to predict sequences from the metagenomic data."
