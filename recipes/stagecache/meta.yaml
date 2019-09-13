@@ -1,0 +1,38 @@
+{% set name = "stagecache" %}
+{% set author = "jmeppley" %}
+{% set version = "0.0.1" %}
+{% set sha256 = "020f8dc149a6ac2a313a5ca11a76e7762e90d6aa02879f25de0544b731b51657" %}
+{% set summary = "Module and script for staging files in local cache" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}.{{ version }}.tar.gz
+  url: https://github.com/{{ author }}/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+about:
+  home: https://github.com/{{ author }}/{{ name }}
+  summary: {{ summary }}
+
+build:
+  number: 0
+  noarch: python
+  script: python -m pip install --no-deps --ignore-installed .
+
+requirements:
+  build:
+    - python >=3,<3.7
+  host:
+    - python >=3,<3.7
+  run:
+    - python >=3,<3.7
+    - paramiko
+    - pyyaml
+
+test:
+  commands:
+      - stagecache.py -h
+      - stagecache.py --version
