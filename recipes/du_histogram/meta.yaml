@@ -1,5 +1,6 @@
 {% set name = "du_histogram" %}
-{% set version = "alpha.02" %}
+{% set author = "jmeppley" %}
+{% set version = "0.9.2" %}
 {% set sha256 = "e04478643a3485934ecb0d3ce07f7b0cfe6552573a40d36e7b78254f7cae9537" %}
 {% set summary = "Simple ASCII histogram of du (disk usage) output" %}
 
@@ -8,29 +9,33 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}.{{ version }}.tar.gz
-  url: https://github.com/jmeppley/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+    # building from master for the alpha phase
+    git_url: https://github.com/{{ author }}/{{ name }}
+    git_rev: v{{ version }}
+    #fn: {{ name }}.{{ version }}.tar.gz
+    #url: https://github.com/jmeppley/{{ name }}/archive/{{ version }}.tar.gz
+    #sha256: {{ sha256 }}
 
 about:
   home: https://github.com/jmeppley/{{ name }}
   summary: {{ summary }}
 
 build:
-  number: 1
+  number: 0
+  noarch: python
+  script: $PYTHON -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - python
-    - numpy
 
   run:
     - python
-    - numpy
     - docopt
 
 test:
   commands:
       - duhist.py -h
       - duhist.py
+      - duhist.py -w 90 -W 15
       - duhist.py -l -t .

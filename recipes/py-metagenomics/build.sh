@@ -1,6 +1,5 @@
 #!/bin/bash
-
-$PYTHON setup.py install 
+$PYTHON -m pip install --no-deps --ignore-installed .
 
 outdir=$PREFIX/share/$PKG_NAME-$PKG_VERSION-$PKG_BUILDNUM
 mkdir -p $outdir

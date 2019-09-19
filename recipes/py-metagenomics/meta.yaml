@@ -1,5 +1,6 @@
 {% set name = "py-metagenomics" %}
-{% set version = "1.1.1" %}
+{% set author = "jmeppley" %}
+{% set version = "1.1.2" %}
 {% set sha256 = "020f8dc149a6ac2a313a5ca11a76e7762e90d6aa02879f25de0544b731b51657" %}
 {% set summary = "Some python libs and scripts for metagenomic analyses" %}
 
@@ -8,23 +9,26 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}.{{ version }}.tar.gz
-  url: https://github.com/jmeppley/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+    # building from master for the alpha phase
+    git_url: https://github.com/{{ author }}/{{ name }}
+    git_rev: v{{ version }}
+    # in case I want to switch back to releases
+    #fn: {{ name }}.{{ version }}.tar.gz
+    #url: https://github.com/jmeppley/{{ name }}/archive/v{{ version }}.tar.gz
+    #sha256: {{ sha256 }}
 
 about:
   home: https://github.com/jmeppley/{{ name }}
   summary: {{ summary }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
-  skip: True # [py26]
 
 requirements:
-  build:
-    - python
-
+  host:
+    - python >=3
+    - pip
   run:
     - python
     - numpy
