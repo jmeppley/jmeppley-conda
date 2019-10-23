@@ -1,6 +1,6 @@
 {% set name = "stagecache" %}
 {% set author = "jmeppley" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.8" %}
 {% set sha256 = "65d93b0251c7eb4642a119cf5a60a77867022336e0670956b5ab72d7ae9c5784" %}
 {% set summary = "Module and script for staging files in local cache" %}
 
@@ -22,7 +22,7 @@ about:
   summary: {{ summary }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: $PYTHON -m pip install --no-deps --ignore-installed .
 
@@ -38,5 +38,5 @@ requirements:
 
 test:
   commands:
-      - stagecache.py -h
-      - stagecache.py --version
+      - stagecache -h
+      - stagecache --version
