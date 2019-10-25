@@ -1,7 +1,6 @@
 {% set name = "stagecache" %}
 {% set author = "jmeppley" %}
-{% set version = "0.0.8" %}
-{% set sha256 = "65d93b0251c7eb4642a119cf5a60a77867022336e0670956b5ab72d7ae9c5784" %}
+{% set version = "0.1.0" %}
 {% set summary = "Module and script for staging files in local cache" %}
 
 package:
@@ -12,10 +11,6 @@ source:
     # building from master for the alpha phase
     git_url: https://github.com/{{ author }}/{{ name }}
     git_rev: v{{ version }}
-    # switch to releases once we hit beta?
-    #fn: {{ name }}.{{ version }}.tar.gz
-    #url: https://github.com/{{ author }}/{{ name }}/archive/v{{ version }}.tar.gz
-    #sha256: {{ sha256 }}
 
 about:
   home: https://github.com/{{ author }}/{{ name }}
