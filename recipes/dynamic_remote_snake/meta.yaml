@@ -16,7 +16,7 @@ about:
   summary: {{ summary }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: $PYTHON -m pip install --no-deps --ignore-installed .
 
@@ -28,7 +28,7 @@ requirements:
     - python
     - snakemake-minimal
     - pysftp
-    - stagecache
+    - stagecache >=0.1
 
 test:
     commands:

@@ -1,6 +1,6 @@
 {% set name = "stagecache" %}
 {% set author = "jmeppley" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 {% set summary = "Module and script for staging files in local cache" %}
 
 package:
