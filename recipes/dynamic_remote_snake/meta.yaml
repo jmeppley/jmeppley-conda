@@ -1,6 +1,6 @@
 {% set name = "dynamic_remote_snake" %}
 {% set author = "jmeppley" %}
-{% set version = "0.0.8" %}
+{% set version = "0.0.9" %}
 {% set summary = "Snakemake extension to dynamically make files remote" %}
 
 package:
@@ -28,7 +28,7 @@ requirements:
     - python
     - snakemake-minimal
     - pysftp
-    - stagecache >=0.1
+    - stagecache >=0.1.3
 
 test:
     commands:
