@@ -1,6 +1,6 @@
 {% set name = "py-metagenomics" %}
 {% set author = "jmeppley" %}
-{% set version = "1.1.2" %}
+{% set version = "1.2.1" %}
 {% set sha256 = "020f8dc149a6ac2a313a5ca11a76e7762e90d6aa02879f25de0544b731b51657" %}
 {% set summary = "Some python libs and scripts for metagenomic analyses" %}
 
@@ -22,7 +22,7 @@ about:
   summary: {{ summary }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
 
 requirements:
