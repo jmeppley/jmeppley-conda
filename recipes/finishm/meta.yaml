@@ -1,5 +1,6 @@
 {% set name = "FinishM" %}
 {% set version = "0.0.9" %}
+{% set ruby_version = "2.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -10,15 +11,14 @@ build:
   script:
       - "gem install finishm -v {{ version }}"
       - "sh $RECIPE_DIR/munge_shebangs.sh"
-
+      - "sh $RECIPE_DIR/compile_velvet.sh {{ ruby_version }} {{ version }}"
 requirements:
   host:
-    - ruby >=2.4, <2.6
+    - ruby >=2.5, <2.6
     - gxx_linux-64
   run:
-    - ruby >=2.4, <2.6
+    - ruby >=2.5, <2.6
     - graphviz
-    - velvet
     - clustalo
 
 about:
