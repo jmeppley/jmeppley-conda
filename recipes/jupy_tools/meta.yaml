@@ -1,7 +1,7 @@
 
 {% set name = "jupy_tools" %}
 {% set author = "jmeppley" %}
-{% set version = "0.0.3a" %}
+{% set version = "0.0.4a" %}
 {% set summary = "Some python tools for jupyter" %}
 
 package:
