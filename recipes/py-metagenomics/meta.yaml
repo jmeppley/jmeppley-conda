@@ -22,17 +22,17 @@ about:
   summary: {{ summary }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
   host:
-    - python >=3
+    - python >=3, <3.9
     - pip
   run:
     - python
     - numpy
-    - biopython
+    - biopython <=1.75
     - pandas
     - simplejson
     - last
